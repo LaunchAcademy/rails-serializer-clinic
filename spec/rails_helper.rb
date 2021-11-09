@@ -9,6 +9,8 @@ require File.join(File.dirname(__FILE__), 'support/shoulda')
 require File.join(File.dirname(__FILE__), 'support/valid_attribute')
 require File.join(File.dirname(__FILE__), 'support/factory_bot')
 require 'capybara/rspec'
+require 'factory_bot'
+Dir[File.join(File.dirname(__FILE__), "factories", "*.rb")].sort.each { |f| require f }
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -35,6 +37,7 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
