@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :author
-  belongs_to :creator, class_name: :User
+  belongs_to :creator, class_name: :User, foreign_key: :creator_id
 
   has_many :reviews
 

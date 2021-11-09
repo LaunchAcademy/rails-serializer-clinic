@@ -1,24 +1,11 @@
-# README
+```ruby
+gem "active_model_serializers"
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Serialize single resource
+- Serialize resource with an association
+- Look at `object` and `scope` within serializer
+- Access to Devise `current_user` for serializer to use
+- Creating serializer helper methods
+- Create multiple serializers for resource (index & show)
+- Serializing more than 2 levels of association
