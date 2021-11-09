@@ -1,19 +1,13 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :id, :body, :rating, :random_data
+  attributes :id
 
-  belongs_to :user, if: :current_user?
-
-  def random_data 
-    # binding.pry
-    scope[:random_data]
-  end
+  # belongs_to :user, if: :current_user?
+  belongs_to :user
+  
+  # binding.pry
 
   def current_user?
-    current_user == object.user
+    # binding.pry
+    scope[:current_user] == object.user
   end
 end
-
-
-# Two special attributes available in the methods we create 
-# - object 
-# - scope

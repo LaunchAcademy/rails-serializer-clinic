@@ -1,6 +1,5 @@
 class BookShowSerializer < ActiveModel::Serializer
-  attributes :id, :title, :author_name, :publication, :copyright
+  attributes :id, :title, :description, :publication
 
   has_many :reviews
-
 end
