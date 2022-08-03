@@ -1,6 +1,7 @@
 ```ruby
 gem "active_model_serializers"
 ```
+- make it so doesnt come with it, so you'll have to add it
 
 - Serialize single resource
 - Serialize resource with an association
