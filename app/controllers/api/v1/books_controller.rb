@@ -1,6 +1,8 @@
 class Api::V1::BooksController < ApplicationController
   def index
-    render json: Book.all
+    books = Book.all
+    # binding.pry
+    render json: books
 
 
     # serializing arrays MANUALLY
@@ -12,11 +14,11 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def show
-    # shuts off serializer
+    # shuts off serializer so that we see all attributes
     # render json: Book.find(params[:id]), adapter: nil
 
-
-    render json: Book.find(params[:id]), serializer: BookShowSerializer
+    # manually call on a serializer
+    render json: Book.find(params[:id]), serializer: BookShowSerializer, include: ['reviews.user']
 
     # if you need to get more than the current user, you'll need to pass both the special data and current user in as scope
     # random_data = "something important probably"

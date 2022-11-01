@@ -4,6 +4,7 @@ class BookShowSerializer < ActiveModel::Serializer
   has_many :reviews
 
   # def random_data
+  #   # binding.pry
   #   scope[:random_data]
   # end 
 
